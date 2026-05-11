@@ -32,6 +32,7 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-
+      - name: Run vulnerability scan
+        run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
       - name: Build
         run: go build ./...
