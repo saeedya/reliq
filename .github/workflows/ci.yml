@@ -34,5 +34,13 @@ jobs:
           version: latest
       - name: Run vulnerability scan
         run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+      
+      - name: Run Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: "1"
       - name: Build
         run: go build ./...
