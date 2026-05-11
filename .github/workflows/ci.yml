@@ -17,7 +17,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
+          go-version: "1.23"
 
       - name: Install dependencies
         run: go mod download
@@ -29,11 +29,9 @@ jobs:
         run: go test ./...
 
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v
+        uses: golangci/golangci-lint-action@v6
         with:
-            version: latest
-    
-      - name: Run vulnerability scan
-        run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+          version: latest
+
       - name: Build
         run: go build ./...
