@@ -30,6 +30,8 @@ jobs:
 
       - name: Run linter
         run: golangci-lint run
-
+    
+      - name: Run vulnerability scan
+        run: go run golang.org/x/vuln/cmd/govulncheck@latest ./...
       - name: Build
         run: go build ./...

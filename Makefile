@@ -17,3 +17,6 @@ tidy:
 
 lint:
 	golangci-lint run
+	
+vuln:
+	go run golang.org/x/vuln/cmd/govulncheck@latest ./...
