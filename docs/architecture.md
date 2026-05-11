@@ -65,6 +65,19 @@ It will:
 
 The CLI layer should only trigger collection workflows. Kubernetes-specific logic should live in internal packages.
 
+### Kubernetes Integration Layer
+
+The Kubernetes integration layer is responsible for:
+
+- Loading Kubernetes configuration
+- Creating Kubernetes API clients
+- Managing cluster communication
+- Providing reusable cluster access functionality
+
+This layer should remain isolated from CLI concerns and business logic.
+
+The initial implementation will use the local kubeconfig for cluster access.
+
 ### Context Builder
 
 Combines operational signals into a unified incident context.
