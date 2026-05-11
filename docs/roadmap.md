@@ -45,6 +45,23 @@ Example incidents:
 Status:
 Planned
 
+## Initial Implementation Scope
+
+The first implementation of the Kubernetes Incident Collector will focus on:
+
+- Adding the `reliq scan` CLI command
+- Using read-only Kubernetes API access
+- Inspecting pods across namespaces
+- Detecting basic unhealthy pod states
+- Returning structured JSON findings
+- Keeping Kubernetes logic separated from CLI code
+
+Initial unhealthy states:
+- CrashLoopBackOff
+- ImagePullBackOff
+- ErrImagePull
+- Pending
+
 ---
 
 # Phase 2 — Observability Integrations

@@ -52,6 +52,19 @@ Examples:
 - Logs
 - Traces
 
+Initial implementation scope:
+
+The first collector implementation will focus on Kubernetes pod inspection.
+
+It will:
+- Connect to Kubernetes using the user's kubeconfig
+- Use read-only Kubernetes API access
+- List pods across namespaces
+- Extract basic workload health signals
+- Return structured findings for unhealthy workloads
+
+The CLI layer should only trigger collection workflows. Kubernetes-specific logic should live in internal packages.
+
 ### Context Builder
 
 Combines operational signals into a unified incident context.
